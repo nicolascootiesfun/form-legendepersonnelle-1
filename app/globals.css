@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-white text-dark-blue;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .step-container {
+    @apply max-w-4xl mx-auto p-6 md:p-8;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent transition-all;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-dark-blue mb-2;
+  }
+
+  .btn-primary {
+    @apply bg-yellow-btn text-black font-bold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white border-2 border-primary-blue text-primary-blue font-semibold px-6 py-3 rounded-lg hover:bg-light-blue transition-colors;
+  }
+
+  .error-message {
+    @apply text-red-500 text-sm mt-1;
+  }
+
+  .checkbox-custom {
+    @apply w-5 h-5 text-primary-blue border-gray-300 rounded focus:ring-primary-blue;
+  }
+
+  .loading-spinner {
+    @apply animate-spin h-8 w-8 text-primary-blue;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Progress bar styles */
+.progress-bar {
+  @apply h-2 bg-light-blue rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-primary-blue transition-all duration-500 ease-out;
+}
+
+/* Dropzone styles */
+.dropzone {
+  @apply border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-primary-blue transition-colors;
+}
+
+.dropzone-active {
+  @apply border-primary-blue bg-light-blue;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow;
+}
+
+/* Radio and checkbox group styles */
+.option-grid {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-3;
+}
+
+.option-item {
+  @apply flex items-center space-x-2 p-3 rounded-lg border border-gray-200 hover:border-primary-blue cursor-pointer transition-colors;
+}
+
+.option-item-selected {
+  @apply border-primary-blue bg-light-blue;
+}
