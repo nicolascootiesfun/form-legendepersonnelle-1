@@ -60,8 +60,8 @@ export function ThemeStep({ formData, updateFormData, onNext, onBack }: StepProp
 
   const canGoNext = formData.theme !== '' && 
     (formData.theme === 'seulement du divertissement' || 
-     formData.problem !== '' || 
-     (formData.problem === 'Autre' && formData.customProblem !== ''));
+     (formData.problem && formData.problem !== '') || 
+     (formData.problem === 'Autre' && formData.customProblem && formData.customProblem !== ''));
 
   const showProblems = formData.theme && 
     formData.theme !== 'seulement du divertissement' && 
