@@ -58,10 +58,12 @@ export function ThemeStep({ formData, updateFormData, onNext, onBack }: StepProp
     }
   };
 
-  const canGoNext = formData.theme !== '' && 
+  const canGoNext = Boolean(
+    formData.theme !== '' && 
     (formData.theme === 'seulement du divertissement' || 
      (formData.problem && formData.problem !== '') || 
-     (formData.problem === 'Autre' && formData.customProblem && formData.customProblem !== ''));
+     (formData.problem === 'Autre' && formData.customProblem && formData.customProblem !== ''))
+  );
 
   const showProblems = formData.theme && 
     formData.theme !== 'seulement du divertissement' && 
