@@ -8,7 +8,7 @@ import { cn } from '@/app/lib/utils';
 
 export function StoryStyleStep({ formData, updateFormData, onNext, onBack }: StepProps) {
   const availableStyles = STORY_STYLES.filter(
-    style => !style.minAge || formData.childAge >= style.minAge
+    style => !('minAge' in style) || !style.minAge || formData.childAge >= style.minAge
   );
 
   const handleStyleSelect = (styleValue: string) => {
